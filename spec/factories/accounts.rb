@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :account do
-    balance { "MyString" }
+    balance { "100,00" }
+    user
   end
 end

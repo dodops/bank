@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe AccountsController, type: :controller do
+  let!(:user) { create :user }
+
+  before do
+    token = "Bearer #{user.api_token}"
+    request.headers.merge!({"Authorization" => token})
+  end
+
   describe "POST #create" do
     context 'when params are valid' do
       let(:params) { { account: { balance: "500,00" } } }
@@ -32,7 +39,7 @@ describe AccountsController, type: :controller do
   end
 
   describe '#POST transfer' do
-    let!(:source) { create :account, balance: "3.500,00" }
+    let!(:source) { create :account, user: user, balance: "3.500,00" }
     let!(:destination) { create :account, balance: "30,00" }
 
     context 'when source account have enough money' do
@@ -74,7 +81,7 @@ describe AccountsController, type: :controller do
 
   describe "#GET balance" do
     context 'when account is found' do
-      let!(:account) { create :account, balance: "209,25" }
+      let!(:account) { create :account, user: user, balance: "209,25" }
 
       it 'gets the balance fot given account' do
         get :balance, params: { account_id: account.id }, as: :json

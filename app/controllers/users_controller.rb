@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate!, only: :create
+
   def create
     @user = Users::CreateService.call(user_params)
 

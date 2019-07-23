@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def create
-    @account = Account.new(account_params)
+    @account = current_user.accounts.build(account_params)
 
     if @account.save
       render json: @account, status: :created
@@ -10,13 +10,13 @@ class AccountsController < ApplicationController
   end
 
   def balance
-    @account = Account.find(params[:account_id])
+    @account = current_user.accounts.find(params[:account_id])
 
     render json: @account.balance.format, status: :ok
   end
 
   def transfer
-    @source_account = Account.find(params[:source_account_id])
+    @source_account = current_user.accounts.find(params[:source_account_id])
     @destination_account = Account.find(params[:destination_account_id])
 
     transfered = TransferService.call(@source_account, @destination_account, params[:amount])

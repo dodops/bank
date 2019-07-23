@@ -3,6 +3,7 @@ class Account < ApplicationRecord
 
   belongs_to :user
   validate :negative_amount
+  validates :user, presence: true
 
   def plain_balance
     balance.format(symbol: false)
