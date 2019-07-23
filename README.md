@@ -98,3 +98,20 @@ Resposta:
   "message": "Transferencia realizada com sucesso. Saldo restante: 4700,00"
 }
 ```
+## Contribuindo
+
+### Crie uma nova branch
+
+1. `git checkout master`
+1. `git pull origin master` 
+1. `git checkout -b nome-da-sua-branch` (replatroquecing `nome-da-sua-branch` pelo nome desejado) para criar uma nova branch e começar a desenvolver
+
+### Make the change
+
+1. Siga as instruções de 'Configuração inicial'
+1. Faça as modificações desejadas
+
+### Testes e Pull Request
+ 
+ - Execute `rspec spec` na raiz do projeto para garantir que o projeto continua passando.
+ - Crie um novo pull request no Github
