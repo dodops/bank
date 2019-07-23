@@ -1,4 +1,6 @@
 # Bank API
+[![Build Status](https://travis-ci.org/dodops/bank.svg?branch=master)](https://travis-ci.org/dodops/bank)
+[![Coverage Status](https://coveralls.io/repos/github/dodops/bank/badge.svg)](https://coveralls.io/github/dodops/bank)
 
 * Simple Bank Account System
 * Rails 5 API only
