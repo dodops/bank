@@ -77,9 +77,9 @@ curl -X GET http://localhost:3000/accounts/balance -H 'Authorization: Bearer USE
 ### Transferencia
 
 Requisição:
-source_account_id: ID da conta do usuário logado onde será debitado o valor
-destination_account_id: ID da conta onde será creditado o valor
-amount: Valor da transferência
+ - `source_account_id`: ID da conta do usuário logado onde será debitado o valor
+ - `destination_account_id`: ID da conta onde será creditado o valor
+ - `amount`: Valor da transferência
 
 ```bash
 curl -X POST \
