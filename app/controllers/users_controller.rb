@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   def create
     @user = Users::CreateService.call(user_params)
 
-    if @user
-      render json: @user.api_token, status: :created
+    if @user.save
+      render json: { api_token: @user.api_token }, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

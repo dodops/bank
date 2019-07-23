@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
   def balance
     @account = current_user.accounts.find(params[:account_id])
 
-    render json: @account.balance.format, status: :ok
+    render json: { balance: @account.balance.format }, status: :ok
   end
 
   def transfer

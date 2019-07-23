@@ -86,7 +86,9 @@ describe AccountsController, type: :controller do
       it 'gets the balance fot given account' do
         get :balance, params: { account_id: account.id }, as: :json
 
-        expect(response.body).to eq("R$209,25")
+        result = JSON.parse(response.body)
+
+        expect(result['balance']).to eq("R$209,25")
       end
 
       it 'render a ok status' do
