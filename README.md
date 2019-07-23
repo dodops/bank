@@ -67,7 +67,9 @@ curl -X POST http://localhost:3000/accounts \
 
 ### Consulta de Saldo
 ```bash
-curl -X GET http://localhost:3000/accounts/balance -H 'Authorization: Bearer USER_TOKEN' -H 'Content-Type: application/json' -d '{ "account_id": 1 }'
+curl -X GET http://localhost:3000/accounts/balance -H 'Authorization: Bearer USER_TOKEN' \
+  -H 'Content-Type: application/json' \
+   -d '{ "account_id": 1 }'
 ```
 
 ### Transferencia
