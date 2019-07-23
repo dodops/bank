@@ -1,6 +1,7 @@
 class Account < ApplicationRecord
   monetize :balance_cents
 
+  belongs_to :user
   validate :negative_amount
 
   def plain_balance
