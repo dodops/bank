@@ -21,28 +21,10 @@ Clonando e configurando o banco:
 1. Execute `rspec spec` para rodar os testes.
 2. Execute `rails s` para iniciar a aplicação. 
 
+Todos os valores monetários devem ser passados no padrão br: "1.232,00"
+
 ### Criar conta
-SHOW
 
-```code
-GET: http://localhost:3000/products/:id
-```
-
-Resposta:
-
-```JSON
-{
-    "product": {
-        "id": 1,
-        "code": "9138555461722",
-        "description": "Repellendus saepe non consequuntur.",
-        "price": "73.72",
-        "data": null,
-        "name": "Intelligent Wooden Lamp",
-        "quantity": 49
-    }
-}
-```
 
 ```bash
 curl -H 'Content-Type: application/json' -d '{"balance": "930,00"}' -X POST 'http://localhost:3000/accounts'
