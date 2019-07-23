@@ -104,9 +104,9 @@ Resposta:
 
 1. `git checkout master`
 1. `git pull origin master` 
-1. `git checkout -b nome-da-sua-branch` (replatroquecing `nome-da-sua-branch` pelo nome desejado) para criar uma nova branch e começar a desenvolver
+1. `git checkout -b nome-da-sua-branch` (troque `nome-da-sua-branch` pelo nome desejado) para criar uma nova branch e começar a desenvolver
 
-### Make the change
+### Faça as alterações
 
 1. Siga as instruções de 'Configuração inicial'
 1. Faça as modificações desejadas
